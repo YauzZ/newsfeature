@@ -52,4 +52,13 @@ def getarticlewords():
             ec+=1
     return allwords,articlewords,articletitles
 
+def makematrix(allw,articlew):
+    wordvec=[]
 
+    for w,c in allw.items():
+        if c>3 and c<len(articlew)*0.6:
+            wordvec.append(w)
+
+    l1=[[(word in f and f[word] or 0) for word in wordvec] for f in articlew]
+    
+    return l1,wordvec
