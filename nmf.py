@@ -16,7 +16,7 @@ def factorize(v,pc=10,iter=50):
     fc=shape(v)[1]
 
     w=matrix([[random.random() for j in range(pc)] for i in range(ic)])
-    w=matrix([[random.random() for j in range(fc)] for i in range(pc)])
+    h=matrix([[random.random() for j in range(fc)] for i in range(pc)])
 
     for i in range(iter):
         wh=w*h
@@ -26,8 +26,8 @@ def factorize(v,pc=10,iter=50):
         if i%10==0:
             print cost
 
-    if cost==0:
-        break
+        if cost==0: 
+            break
 
     hn=(transpose(w)*v)
     hd=(transpose(w)*w*h)
